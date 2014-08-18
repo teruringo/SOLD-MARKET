@@ -1,462 +1,215 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC
-"-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rev="made" href="mailto:info@mutoys.com" />
-<link rel="index" href="index.html" />
-<link href="manual.css" type="text/css" rel="stylesheet" />
-<title>SOLD-MARKET MANUAL 2014 Summer</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link href="manual.css" type="text/css" rel="stylesheet" />
+	<title>SOLD-MARKET MANUAL 2014 Summer</title>
 </head>
 <body>
-<h1 class="title">SOLD-MARKET MANUAL 2014 Summer</h1>
-<p><a href="index.html">総合目次</a> > <a href="customize.html">カスタマイズ目次</a> > 商品データ記述文法</p>
-<hr /></p>
-<p>SOLD-MARKET カスタマイズの文法とコマンドの説明です。</p>
-<ul><li>
-<a href="#1">はじめに</a>
-</li>
-<li>
-<a href="#2">文法</a>
-<ul><li>
-<a href="#3">基本構文</a>
-</li>
-<li>
-<a href="#4">大文字小文字の同一視</a>
-</li>
-<li>
-<a href="#5">区切り</a>
-</li>
-<li>
-<a href="#6">改行とスペース(区切り)の扱い</a>
-</li>
-<li>
-<a href="#7">コメント(注釈)</a>
-</li>
-<li>
-<a href="#8">変数</a>
-</li>
-<li>
-<a href="#9">数値</a>
-</li>
-<li>
-<a href="#10">単位</a>
-</li>
-<li>
-<a href="#11">文字列</a>
-</li></ul></li>
-<li>
-<a href="#%40%40DEFINE">@@DEFINE</a>
-<ul><li>
-<a href="#13">Set</a>
-</li>
-<li>
-<a href="#14">Scale</a>
-</li>
-<li>
-<a href="#15">Type</a>
-</li>
-<li>
-<a href="#16">MaxMoney</a>
-</li>
-<li>
-<a href="#17">CostShowCase</a>
-</li>
-<li>
-<a href="#18">TimeEditShowCase</a>
-</li>
-<li>
-<a href="#19">TimeSendItem</a>
-</li>
-<li>
-<a href="#20">TimeSendMoney</a>
-</li>
-<li>
-<a href="#21">TimeUseTimeRate</a>
-</li>
-<li>
-<a href="#22">Version</a>
-</li>
-<li>
-<a href="#23">Job</a>
-</li></ul></li>
-<li>
-<a href="#%40%40ITEM">@@ITEM</a>
-<ul><li>
-<a href="#25">no</a>
-</li>
-<li>
-<a href="#26">type</a>
-</li>
-<li>
-<a href="#27">code</a>
-</li>
-<li>
-<a href="#28">name</a>
-</li>
-<li>
-<a href="#29">info</a>
-</li>
-<li>
-<a href="#30">price</a>
-</li>
-<li>
-<a href="#31">limit</a>
-</li>
-<li>
-<a href="#32">pop</a>
-</li>
-<li>
-<a href="#33">scale</a>
-</li>
-<li>
-<a href="#34">plus</a>
-</li>
-<li>
-<a href="#35">base</a>
-</li>
-<li>
-<a href="#36">cost</a>
-</li>
-<li>
-<a href="#37">point</a>
-</li>
-<li>
-<a href="#38">flag</a>
-</li>
-<li>
-<a href="#39">funct _local_</a>
-</li>
-<li>
-<a href="#40">funcs _local_</a>
-</li>
-<li>
-<a href="#41">funcb _local_</a>
-</li></ul></li>
-<li>
-<a href="#%40%40USE">@@USE</a>
-<ul><li>
-<a href="#43">name</a>
-</li>
-<li>
-<a href="#44">price</a>
-</li>
-<li>
-<a href="#45">time</a>
-</li>
-<li>
-<a href="#46">exptime</a>
-</li>
-<li>
-<a href="#47">exp</a>
-</li>
-<li>
-<a href="#48">scale</a>
-</li>
-<li>
-<a href="#49">info</a>
-</li>
-<li>
-<a href="#50">action</a>
-</li>
-<li>
-<a href="#51">arg</a>
-</li>
-<li>
-<a href="#52">argmessage</a>
-</li>
-<li>
-<a href="#53">argselect</a>
-</li>
-<li>
-<a href="#54">okmsg</a>
-</li>
-<li>
-<a href="#55">ngmsg</a>
-</li>
-<li>
-<a href="#56">needexp</a>
-</li>
-<li>
-<a href="#57">need</a>
-</li>
-<li>
-<a href="#58">use</a>
-</li>
-<li>
-<a href="#59">get</a>
-</li>
-<li>
-<a href="#60">func</a>
-</li>
-<li>
-<a href="#61">func _local_</a>
-</li>
-<li>
-<a href="#62">func _local_?</a>
-</li>
-<li>
-<a href="#63">funci _local_</a>
-</li>
-<li>
-<a href="#64">funci _local_i?</a>
-</li>
-<li>
-<a href="#65">param</a>
-</li>
-<li>
-<a href="#66">funcb _local_</a>
-</li>
-<li>
-<a href="#67">job</a>
-</li></ul></li>
-<li>
-<a href="#%40%40EVENT">@@EVENT</a>
-<ul><li>
-<a href="#69">start</a>
-</li>
-<li>
-<a href="#70">basetime</a>
-</li>
-<li>
-<a href="#71">plustime</a>
-</li>
-<li>
-<a href="#72">code</a>
-</li>
-<li>
-<a href="#73">group</a>
-</li>
-<li>
-<a href="#74">startmsg</a>
-</li>
-<li>
-<a href="#75">endmsg</a>
-</li>
-<li>
-<a href="#76">info</a>
-</li>
-<li>
-<a href="#77">startfunc</a>
-</li>
-<li>
-<a href="#78">startfunc _local_</a>
-</li>
-<li>
-<a href="#79">endfunc</a>
-</li>
-<li>
-<a href="#80">endfunc _local_</a>
-</li>
-<li>
-<a href="#81">func</a>
-</li>
-<li>
-<a href="#82">func _local_</a>
-</li>
-<li>
-<a href="#83">param</a>
-</li></ul></li>
-<li>
-<a href="#%40%40INCLUDE">@@INCLUDE</a>
-</li>
-<li>
-<a href="#%40%40FUNCITEM">@@FUNCITEM</a>
-<ul><li>
-<a href="#86">perlコード記述</a>
-</li>
-<li>
-<a href="#87">package item</a>
-</li>
-<li>
-<a href="#88">関数引数</a>
-</li>
-<li>
-<a href="#89">関数戻り値</a>
-</li>
-<li>
-<a href="#90">利用可能変数</a>
-</li></ul></li>
-<li>
-<a href="#%40%40FUNCEVENT">@@FUNCEVENT</a>
-<ul><li>
-<a href="#92">package event</a>
-</li>
-<li>
-<a href="#93">関数引数</a>
-</li>
-<li>
-<a href="#94">関数戻り値</a>
-</li>
-<li>
-<a href="#95">使用可能変数</a>
-</li></ul></li>
-<li>
-<a href="#%40%40FUNCUPDATE">@@FUNCUPDATE</a>
-<ul><li>
-<a href="#97">package main</a>
-</li>
-<li>
-<a href="#98">関数引数</a>
-</li>
-<li>
-<a href="#99">関数戻り値</a>
-</li>
-<li>
-<a href="#100">利用可能変数</a>
-</li></ul></li>
-<li>
-<a href="#%40%40FUNCINIT">@@FUNCINIT</a>
-<ul><li>
-<a href="#102">package main</a>
-</li>
-<li>
-<a href="#103">関数引数</a>
-</li>
-<li>
-<a href="#104">関数戻り値</a>
-</li>
-<li>
-<a href="#105">利用可能変数</a>
-</li></ul></li>
-<li>
-<a href="#%40%40FUNCBASE">@@FUNCBASE</a>
-<ul><li>
-<a href="#107">package main</a>
-</li>
-<li>
-<a href="#108">関数引数</a>
-</li>
-<li>
-<a href="#109">関数戻り値</a>
-</li>
-<li>
-<a href="#110">利用可能変数</a>
-</li></ul></li>
-<li>
-<a href="#%40%40FUNCTURN">@@FUNCTURN</a>
-<ul><li>
-<a href="#112">package main</a>
-</li>
-<li>
-<a href="#113">関数引数</a>
-</li>
-<li>
-<a href="#114">関数戻り値</a>
-</li>
-<li>
-<a href="#115">利用可能変数</a>
-</li></ul></li>
-<li>
-<a href="#%40%40FUNCCUSTOM">@@FUNCCUSTOM</a>
-<ul><li>
-<a href="#117">package main</a>
-</li>
-<li>
-<a href="#118">関数引数</a>
-</li>
-<li>
-<a href="#119">関数戻り値</a>
-</li>
-<li>
-<a href="#120">利用可能変数</a>
-</li></ul></li>
-<li>
-<a href="#%40%40FUNCNEW">@@FUNCNEW</a>
-<ul><li>
-<a href="#122">package main</a>
-</li>
-<li>
-<a href="#123">関数引数</a>
-</li>
-<li>
-<a href="#124">関数戻り値</a>
-</li>
-<li>
-<a href="#125">利用可能変数</a>
-</li></ul></li>
-<li>
-<a href="#%40%40FUNCSHOPIN">@@FUNCSHOPIN</a>
-<ul><li>
-<a href="#127">package main</a>
-</li>
-<li>
-<a href="#128">関数引数</a>
-</li>
-<li>
-<a href="#129">関数戻り値</a>
-</li>
-<li>
-<a href="#130">利用可能変数</a>
-</li></ul></li>
-<li>
-<a href="#%40%40FUNCSHOPOUT">@@FUNCSHOPOUT</a>
-<ul><li>
-<a href="#132">package main</a>
-</li>
-<li>
-<a href="#133">関数引数</a>
-</li>
-<li>
-<a href="#134">関数戻り値</a>
-</li>
-<li>
-<a href="#135">利用可能変数</a>
-</li></ul></li>
-<li>
-<a href="#%40%40FUNCSALE">@@FUNCSALE</a>
-<ul><li>
-<a href="#137">package item</a>
-</li>
-<li>
-<a href="#138">関数引数</a>
-</li>
-<li>
-<a href="#139">関数戻り値</a>
-</li>
-<li>
-<a href="#140">利用可能変数</a>
-</li></ul></li>
-<li>
-<a href="#%40%40FUNCBUY">@@FUNCBUY</a>
-<ul><li>
-<a href="#142">package item</a>
-</li>
-<li>
-<a href="#143">関数引数</a>
-</li>
-<li>
-<a href="#144">関数戻り値</a>
-</li>
-<li>
-<a href="#145">利用可能変数</a>
-</li></ul></li>
-<li>
-<a href="#%40%40IF">@@IF</a>
-</li>
-<li>
-<a href="#%40%40SETMACRO">@@SETMACRO</a>
-</li>
-<li>
-<a href="#%40%40USEMACRO">@@USEMACRO</a>
-</li>
-<li>
-<a href="#%40%40ITEMNO">@@ITEMNO</a>
-</li>
-<li>
-<a href="#%40%40VALUE">@@VALUE</a>
-</li>
-<li>
-<a href="#%40%40END">@@END</a>
-</li></ul><h2 class="section"><small><a href="#top">△</a></small> <a name="1" id="1">はじめに</a></h2>
-<p>この説明書では<code class="filename">soldout/inc/inc-item-data.cgi</code>の記述方法(文法やコマンド)を説明します。
-説明だけでは分かりにくい部分もありますので、
-併せて <code class="filename">soldout/inc/inc-item-data.cgi</code> を記述サンプルとして参照してください。。</p>
-<h2 class="section"><small><a href="#top">△</a></small> <a name="2" id="2">文法</a></h2>
-<h3 class="subsection"><small><a href="#top">△</a></small> <a name="3" id="3">基本構文</a></h3>
-<p>@@コマンド [コマンド毎の記述 [コマンド毎の記述 [...]]]</p>
+	<h1 class="title">SOLD-MARKET MANUAL 2014 Summer</h1>
+	<p><a href="index.html">総合目次</a> > <a href="customize.html">カスタマイズ目次</a> > 商品データ記述文法</p>
+	<hr />
+	<p>SOLD-MARKET カスタマイズの文法とコマンドの説明です。</p>
+	<ul>
+		<li><a href="#1">はじめに</a></li>
+		<li><a href="#2">文法</a>
+			<ul>
+				<li><a href="#3">基本構文</a></li>
+				<li><a href="#4">大文字小文字の同一視</a></li>
+				<li><a href="#5">区切り</a></li>
+				<li><a href="#6">改行とスペース(区切り)の扱い</a></li>
+				<li><a href="#7">コメント(注釈)</a></li>
+				<li><a href="#8">変数</a></li>
+				<li><a href="#9">数値</a></li>
+				<li><a href="#10">単位</a></li>
+				<li><a href="#11">文字列</a></li>
+			</ul>
+		</li>
+		<li><a href="#%40%40DEFINE">@@DEFINE</a>
+			<ul>
+				<li><a href="#13">Set</a></li>
+				<li><a href="#14">Scale</a></li>
+				<li><a href="#15">Type</a></li>
+				<li><a href="#16">MaxMoney</a></li>
+				<li><a href="#17">CostShowCase</a></li>
+				<li><a href="#18">TimeEditShowCase</a></li>
+				<li><a href="#19">TimeSendItem</a></li>
+				<li><a href="#20">TimeSendMoney</a></li>
+				<li><a href="#21">TimeUseTimeRate</a></li>
+				<li><a href="#22">Version</a></li>
+				<li><a href="#23">Job</a></li>
+			</ul>
+		</li>
+		<li><a href="#%40%40ITEM">@@ITEM</a>
+			<ul>
+				<li><a href="#25">no</a></li>
+				<li><a href="#26">type</a></li>
+				<li><a href="#27">code</a></li>
+				<li><a href="#28">name</a></li>
+				<li><a href="#29">info</a></li>
+				<li><a href="#30">price</a></li>
+				<li><a href="#31">limit</a></li>
+				<li><a href="#32">pop</a></li>
+				<li><a href="#33">scale</a></li>
+				<li><a href="#34">plus</a></li>
+				<li><a href="#35">base</a></li>
+				<li><a href="#36">cost</a></li>
+				<li><a href="#37">point</a></li>
+				<li><a href="#38">flag</a></li>
+				<li><a href="#39">funct _local_</a></li>
+				<li><a href="#40">funcs _local_</a></li>
+				<li><a href="#41">funcb _local_</a></li>
+			</ul>
+		</li>
+		<li><a href="#%40%40USE">@@USE</a>
+			<ul>
+				<li><a href="#43">name</a></li>
+				<li><a href="#44">price</a></li>
+				<li><a href="#45">time</a></li>
+				<li><a href="#46">exptime</a></li>
+				<li><a href="#47">exp</a></li>
+				<li><a href="#48">scale</a></li>
+				<li><a href="#49">info</a></li>
+				<li><a href="#50">action</a></li>
+				<li><a href="#51">arg</a></li>
+				<li><a href="#52">argmessage</a></li>
+				<li><a href="#53">argselect</a></li>
+				<li><a href="#54">okmsg</a></li>
+				<li><a href="#55">ngmsg</a></li>
+				<li><a href="#56">needexp</a></li>
+				<li><a href="#57">need</a></li>
+				<li><a href="#58">use</a></li>
+				<li><a href="#59">get</a></li>
+				<li><a href="#60">func</a></li>
+				<li><a href="#61">func _local_</a></li>
+				<li><a href="#62">func _local_?</a></li>
+				<li><a href="#63">funci _local_</a></li>
+				<li><a href="#64">funci _local_i?</a></li>
+				<li><a href="#65">param</a></li>
+				<li><a href="#66">funcb _local_</a></li>
+				<li><a href="#67">job</a></li></ul></li>
+				<li><a href="#%40%40EVENT">@@EVENT</a>
+					<ul>
+						<li><a href="#69">start</a></li>
+						<li><a href="#70">basetime</a></li>
+						<li><a href="#71">plustime</a></li>
+						<li><a href="#72">code</a></li>
+						<li><a href="#73">group</a></li>
+						<li><a href="#74">startmsg</a></li>
+						<li><a href="#75">endmsg</a></li>
+						<li><a href="#76">info</a></li>
+						<li><a href="#77">startfunc</a></li>
+						<li><a href="#78">startfunc _local_</a></li>
+						<li><a href="#79">endfunc</a></li>
+						<li><a href="#80">endfunc _local_</a></li>
+						<li><a href="#81">func</a></li>
+						<li><a href="#82">func _local_</a></li>
+						<li><a href="#83">param</a></li></ul></li>
+						<li><a href="#%40%40INCLUDE">@@INCLUDE</a></li>
+						<li><a href="#%40%40FUNCITEM">@@FUNCITEM</a>
+							<ul>
+								<li><a href="#86">perlコード記述</a></li>
+								<li><a href="#87">package item</a></li>
+								<li><a href="#88">関数引数</a></li>
+								<li><a href="#89">関数戻り値</a></li>
+								<li><a href="#90">利用可能変数</a></li>
+							</ul>
+						</li>
+						<li><a href="#%40%40FUNCEVENT">@@FUNCEVENT</a>
+							<ul>
+								<li><a href="#92">package event</a></li>
+								<li><a href="#93">関数引数</a></li>
+								<li><a href="#94">関数戻り値</a></li>
+								<li><a href="#95">使用可能変数</a></li>
+							</ul>
+						</li>
+						<li><a href="#%40%40FUNCUPDATE">@@FUNCUPDATE</a>
+							<ul>
+								<li><a href="#97">package main</a></li>
+								<li><a href="#98">関数引数</a></li>
+								<li><a href="#99">関数戻り値</a></li>
+								<li><a href="#100">利用可能変数</a></li></ul></li>
+								<li><a href="#%40%40FUNCINIT">@@FUNCINIT</a>
+									<ul>
+										<li><a href="#102">package main</a></li>
+										<li><a href="#103">関数引数</a></li>
+										<li><a href="#104">関数戻り値</a></li>
+										<li><a href="#105">利用可能変数</a></li>
+									</ul>
+								</li>
+								<li><a href="#%40%40FUNCBASE">@@FUNCBASE</a>
+									<ul>
+										<li><a href="#107">package main</a></li>
+										<li><a href="#108">関数引数</a></li>
+										<li><a href="#109">関数戻り値</a></li>
+										<li><a href="#110">利用可能変数</a></li>
+									</ul>
+								</li>
+								<li><a href="#%40%40FUNCTURN">@@FUNCTURN</a><ul><li><a href="#112">package main</a></li>
+								<li><a href="#113">関数引数</a></li>
+								<li><a href="#114">関数戻り値</a></li>
+								<li><a href="#115">利用可能変数</a></li></ul></li>
+								<li><a href="#%40%40FUNCCUSTOM">@@FUNCCUSTOM</a>
+									<ul>
+										<li><a href="#117">package main</a></li>
+										<li><a href="#118">関数引数</a></li>
+										<li><a href="#119">関数戻り値</a></li>
+										<li><a href="#120">利用可能変数</a></li>
+									</ul>
+								</li>
+								<li><a href="#%40%40FUNCNEW">@@FUNCNEW</a>
+									<ul>
+										<li><a href="#122">package main</a></li>
+										<li><a href="#123">関数引数</a></li>
+										<li><a href="#124">関数戻り値</a></li>
+										<li><a href="#125">利用可能変数</a></li>
+									</ul>
+								</li>
+								<li><a href="#%40%40FUNCSHOPIN">@@FUNCSHOPIN</a>
+									<ul>
+										<li><a href="#127">package main</a></li>
+										<li><a href="#128">関数引数</a></li>
+										<li><a href="#129">関数戻り値</a></li>
+										<li><a href="#130">利用可能変数</a></li>
+									</ul>
+								</li>
+								<li><a href="#%40%40FUNCSHOPOUT">@@FUNCSHOPOUT</a>
+									<ul>
+										<li><a href="#132">package main</a></li>
+										<li><a href="#133">関数引数</a></li>
+										<li><a href="#134">関数戻り値</a></li>
+										<li><a href="#135">利用可能変数</a></li>
+									</ul>
+								</li>
+								<li><a href="#%40%40FUNCSALE">@@FUNCSALE</a>
+									<ul>
+										<li><a href="#137">package item</a></li>
+										<li><a href="#138">関数引数</a></li>
+										<li><a href="#139">関数戻り値</a></li>
+										<li><a href="#140">利用可能変数</a></li>
+									</ul>
+								</li>
+								<li><a href="#%40%40FUNCBUY">@@FUNCBUY</a>
+									<ul>
+										<li><a href="#142">package item</a></li>
+										<li><a href="#143">関数引数</a></li>
+										<li><a href="#144">関数戻り値</a></li>
+										<li><a href="#145">利用可能変数</a></li>
+									</ul>
+								</li>
+								<li><a href="#%40%40IF">@@IF</a></li>
+								<li><a href="#%40%40SETMACRO">@@SETMACRO</a></li>
+								<li><a href="#%40%40USEMACRO">@@USEMACRO</a></li>
+								<li><a href="#%40%40ITEMNO">@@ITEMNO</a></li>
+								<li><a href="#%40%40VALUE">@@VALUE</a></li>
+								<li><a href="#%40%40END">@@END</a></li>
+							</ul>
+							<h2 class="section"><small><a href="#top">△</a></small> <a name="1" id="1">はじめに</a></h2>
+							<p>この説明書では<code class="filename">soldout/inc/inc-item-data.cgi</code>の記述方法(文法やコマンド)を説明します。説明だけでは分かりにくい部分もありますので、併せて <code class="filename">soldout/inc/inc-item-data.cgi</code> を記述サンプルとして参照してください。。</p>
+							<h2 class="section"><small><a href="#top">△</a></small> <a name="2" id="2">文法</a></h2>
+							<h3 class="subsection"><small><a href="#top">△</a></small> <a name="3" id="3">基本構文</a></h3>
+								<p>@@コマンド [コマンド毎の記述 [コマンド毎の記述 [...]]]</p>
 <h3 class="subsection"><small><a href="#top">△</a></small> <a name="4" id="4">大文字小文字の同一視</a></h3>
 <p>コマンド名やコマンド毎のパラメータ名は大文字小文字を同一視します。
 以下は全て同一と見なされます。</p>
