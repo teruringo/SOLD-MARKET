@@ -1,20 +1,20 @@
-﻿<p><?xml version="1.0" encoding="Shift_JIS"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC
 "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rev="made" href="mailto:info@mutoys.com" />
 <link rel="index" href="index.html" />
 <link href="manual.css" type="text/css" rel="stylesheet" />
-<title>SOLD OUT MANUAL 2004-03-18</title>
+<title>SOLD-MARKET MANUAL 2014 Summer</title>
 </head>
 <body>
-<h1 class="title">SOLD OUT MANUAL 2004-03-18</h1>
-<p><a href="index.html">総合目次</a> &gt; <a href="customize.html">カスタマイズ目次</a> &gt; 各種データ表</p>
+<h1 class="title">SOLD-MARKET MANUAL 2014 Summer</h1>
+<p><a href="index.html">総合目次</a> > <a href="customize.html">カスタマイズ目次</a> > 各種データ表</p>
 <hr /></p>
-<p>SOLD OUT カスタマイズに利用できる変数の説明です。</p>
+<p>SOLD-MARKET カスタマイズに利用できる変数の説明です。</p>
 <ul><li>
 <a href="#1">各種データ変数表</a>
 </li>
@@ -352,10 +352,10 @@
 サーバへの負荷と相談しながら利用してください。</p>
 <p>関連関数</p>
 <ul><li>
-<a href="customize4.html#SetTownData">各種関数表 &gt; SetTownData</a>
+<a href="customize4.html#SetTownData">各種関数表 > SetTownData</a>
 </li>
 <li>
-<a href="customize4.html#GetTownData">各種関数表 &gt; GetTownData</a>
+<a href="customize4.html#GetTownData">各種関数表 > GetTownData</a>
 </li></ul><h2 class="section"><small><a href="#top">△</a></small> <a name="8" id="8">@SHOWCASE_COST</a></h2>
 <p>陳列棚維持費配列</p>
 <p>添字 0~7 が陳列棚 1~8 個に対応</p>
@@ -370,7 +370,7 @@ $SHOWCASE_COST[3];
 <p>商品分類名配列</p>
 <p>$ITEM[?]->{type}に対応します。</p>
 <pre class="display">
-$ITEMTYPE[$ITEM[1]-&gt;{type}];
+$ITEMTYPE[$ITEM[1]->{type}];
 </pre><h2 class="section"><small><a href="#top">△</a></small> <a name="11" id="11">@DTwholestore</a></h2>
 <p>問屋在庫</p>
 <p>$DTwholestore[0~]が商品番号 1~に対応します。</p>
@@ -451,58 +451,58 @@ $DTwholestore[3];
 <p>$DT->{showcase}[0 ～ showcasecount-1]で、各陳列棚に陳列されている商品の番号が入っている。
 値が 0 の場合は未陳列。次の price と対になっている。</p>
 <pre class="display">
-$DT-&gt;{showcase}[0];
-$DT-&gt;{showcase}[1];
-$DT-&gt;{showcase}[2];
+$DT->{showcase}[0];
+$DT->{showcase}[1];
+$DT->{showcase}[2];
 </pre><h3 class="subsection"><small><a href="#top">△</a></small> <a name="46" id="46">price</a></h3>
 <p>陳列棚配列へのリファレンス</p>
 <p>$DT->{price}[0 ～ showcasecount-1]で、各陳列棚に陳列されている商品の売値が入っている。
 前の showcase と対になっている。</p>
 <pre class="display">
-$DT-&gt;{price}[0];
-$DT-&gt;{price}[1];
-$DT-&gt;{price}[2];
+$DT->{price}[0];
+$DT->{price}[1];
+$DT->{price}[2];
 </pre><h3 class="subsection"><small><a href="#top">△</a></small> <a name="47" id="47">item</a></h3>
 <p>商品在庫配列へのリファレンス</p>
 <p>$DT->{item}[商品番号-1] へ商品番号の商品の在庫数が入っている。</p>
 <pre class="display">
-$DT-&gt;{item}[0];
-$DT-&gt;{item}[1];
-$DT-&gt;{item}[2];
-$DT-&gt;{item}[3];
+$DT->{item}[0];
+$DT->{item}[1];
+$DT->{item}[2];
+$DT->{item}[3];
 </pre><h3 class="subsection"><small><a href="#top">△</a></small> <a name="48" id="48">itemyesterday</a></h3>
 <p>商品昨日売上数の連想配列へのリファレンス</p>
 <p>$DT->{itemyesterday}{商品番号}に昨日の売上数が入っている。</p>
 <pre class="display">
-$DT-&gt;{itemyesterday}{1};
-$DT-&gt;{itemyesterday}{2};
-$DT-&gt;{itemyesterday}{3};
-$DT-&gt;{itemyesterday}{4};
+$DT->{itemyesterday}{1};
+$DT->{itemyesterday}{2};
+$DT->{itemyesterday}{3};
+$DT->{itemyesterday}{4};
 </pre><h3 class="subsection"><small><a href="#top">△</a></small> <a name="49" id="49">itemtoday</a></h3>
 <p>商品本日売上数の連想配列へのリファレンス</p>
 <p>$DT->{itemtoday}{商品番号}に本日の売上数が入っている。</p>
 <pre class="display">
-$DT-&gt;{itemtoday}{1};
-$DT-&gt;{itemtoday}{2};
-$DT-&gt;{itemtoday}{3};
-$DT-&gt;{itemtoday}{4};
+$DT->{itemtoday}{1};
+$DT->{itemtoday}{2};
+$DT->{itemtoday}{3};
+$DT->{itemtoday}{4};
 </pre><h3 class="subsection"><small><a href="#top">△</a></small> <a name="50" id="50">exp</a></h3>
 <p>商品熟練度の連想配列へのリファレンス</p>
 <p>$DT->{exp}{商品番号}に商品毎の熟練度(0~1000)が入っている。 1/10 で表示する。</p>
 <pre class="display">
-$DT-&gt;{exp}{1};
-$DT-&gt;{exp}{2};
-$DT-&gt;{exp}{3};
-$DT-&gt;{exp}{4};
+$DT->{exp}{1};
+$DT->{exp}{2};
+$DT->{exp}{3};
+$DT->{exp}{4};
 </pre><h3 class="subsection"><small><a href="#top">△</a></small> <a name="51" id="51">user</a></h3>
 <p>独自データ格納用連想配列へのリファレンス</p>
 <p>$DT->{user}->{独自キー}に独自のデータを保存できる。</p>
 <p>ただし、独自キーとその設定値には「, : およびコントロールキャラクタ(\x00-\x1f) 」は使用できない。
 また、「 _so_ 」から始まるキーはシステム予約なので使用できない。</p>
 <pre class="display">
-$DT-&gt;{user}-&gt;{hp};
-$DT-&gt;{user}-&gt;{weapon};
-$DT-&gt;{user}-&gt;{memo};
+$DT->{user}->{hp};
+$DT->{user}->{weapon};
+$DT->{user}->{memo};
 </pre><h3 class="subsection"><small><a href="#top">△</a></small> <a name="52" id="52">point</a></h3>
 <p>ランキングに使用する点数(参照のみ)</p>
 <h2 class="section"><small><a href="#top">△</a></small> <a name="53" id="53">@DT</a></h2>
@@ -521,8 +521,8 @@ $DT-&gt;{user}-&gt;{memo};
 <h3 class="subsection"><small><a href="#top">△</a></small> <a name="57" id="57">type</a></h3>
 <p>商品分類($ITEMTYPE[type]で分類名取得可)</p>
 <pre class="display">
-$ITEM[1]-&gt;{type};
-$ITEMTYPE[$ITEM[1]-&gt;{type}];
+$ITEM[1]->{type};
+$ITEMTYPE[$ITEM[1]->{type}];
 </pre><h3 class="subsection"><small><a href="#top">△</a></small> <a name="58" id="58">price</a></h3>
 <p>標準価格</p>
 <h3 class="subsection"><small><a href="#top">△</a></small> <a name="59" id="59">cost</a></h3>
@@ -590,10 +590,10 @@ $ITEMTYPE[$ITEM[1]-&gt;{type}];
 <p>コメント(補正済)</p></blockquote>
 </p>
 <pre class="display">
-$USE-&gt;{arg}-&gt;{target};
-$USE-&gt;{arg}-&gt;{targetidx};
-$USE-&gt;{arg}-&gt;{count};
-$USE-&gt;{arg}-&gt;{message};
+$USE->{arg}->{target};
+$USE->{arg}->{targetidx};
+$USE->{arg}->{count};
+$USE->{arg}->{message};
 </pre><h3 class="subsection"><small><a href="#top">△</a></small> <a name="90" id="90">use</a></h3>
 <p>使用商品の連想配列リファレンスの配列リファレンス</p>
 <p>$USE->{use}[0~]が使用商品の連想配列リファレンス。配列なので複数有り。その連想配列は以下の通り。</p>
@@ -607,10 +607,10 @@ $USE-&gt;{arg}-&gt;{message};
 <p>消費時の表示メッセージ</p></blockquote>
 </p>
 <pre class="display">
-$USE-&gt;{use}[0]-&gt;{no};
-$USE-&gt;{use}[0]-&gt;{count};
-$USE-&gt;{use}[0]-&gt;{proba};
-$USE-&gt;{use}[0]-&gt;{message};
+$USE->{use}[0]->{no};
+$USE->{use}[0]->{count};
+$USE->{use}[0]->{proba};
+$USE->{use}[0]->{message};
 </pre><h3 class="subsection"><small><a href="#top">△</a></small> <a name="95" id="95">result</a></h3>
 <p>使用結果の連想配列リファレンス</p>
 <blockquote><p><h4 class="sub2section"><a name="96" id="96">create</a></h4>
@@ -627,10 +627,10 @@ $USE-&gt;{use}[0]-&gt;{message};
 <p>取得時の表示メッセージ</p></blockquote>
 </p>
 <pre class="display">
-$USE-&gt;{result}-&gt;{create}[0]-&gt;{no};
-$USE-&gt;{result}-&gt;{create}[0]-&gt;{count};
-$USE-&gt;{result}-&gt;{create}[0]-&gt;{proba};
-$USE-&gt;{result}-&gt;{create}[0]-&gt;{message};
+$USE->{result}->{create}[0]->{no};
+$USE->{result}->{create}[0]->{count};
+$USE->{result}->{create}[0]->{proba};
+$USE->{result}->{create}[0]->{message};
 </pre><h4 class="sub2section"><a name="101" id="101">function</a></h4>
 <p>呼び出す関数名</p>
 <h4 class="sub2section"><a name="102" id="102">message</a></h4>
@@ -641,20 +641,11 @@ $USE-&gt;{result}-&gt;{create}[0]-&gt;{message};
 <p>商品非取得時のメッセージ</p></blockquote>
 </p>
 <pre class="display">
-$USE-&gt;{result}-&gt;{message}-&gt;{resultok};
-$USE-&gt;{result}-&gt;{message}-&gt;{resultng};
+$USE->{result}->{message}->{resultok};
+$USE->{result}->{message}->{resultng};
 </pre></blockquote>
 </p>
 <p><small><a href="#top">△</a></small></p>
-<hr /><p><a href="index.html">総合目次</a> &gt; <a href="customize.html">カスタマイズ目次</a> &gt; 各種データ表</p>
-<hr /><div class="footer">
-<address>
-Copyright (C) 2001-2002 MUTOYS.<br />
-<a href="http://mutoys.com/">MUTOYS(ムートイズ) http://mutoys.com/</a><br />
-<a href="mailto:info@mutoys.com">info@mutoys.com</a><br />
-管理人：MU<br />
-画像作成：NAYUTA<br />
-</address>
-</div>
+<hr /><p><a href="index.html">総合目次</a> > <a href="customize.html">カスタマイズ目次</a> > 各種データ表</p>
 </body>
 </html>

@@ -1,18 +1,18 @@
-﻿<p><?xml version="1.0" encoding="Shift_JIS"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC
 "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rev="made" href="mailto:info@mutoys.com" />
 <link rel="index" href="index.html" />
 <link href="manual.css" type="text/css" rel="stylesheet" />
-<title>SOLD OUT MANUAL 2004-03-18</title>
+<title>SOLD-MARKET MANUAL 2014 Summer</title>
 </head>
 <body>
-<h1 class="title">SOLD OUT MANUAL 2004-03-18</h1>
-<p><a href="index.html">総合目次</a> &gt; 設置方法やライセンスについて</p>
+<h1 class="title">SOLD-MARKET MANUAL 2014 Summer</h1>
+<p><a href="index.html">総合目次</a> > 設置方法やライセンスについて</p>
 <hr /></p>
 <ul><li>
 <a href="#1">はじめに</a>
@@ -24,7 +24,7 @@
 <a href="#3"><code class="filename">jcode.pl</code>について</a>
 </li>
 <li>
-<a href="#4">SOLD OUT利用ライセンス</a>
+<a href="#4">SOLD-MARKET利用ライセンス</a>
 </li>
 <li>
 <a href="#5">サポート</a>
@@ -70,20 +70,20 @@
 <li>
 <a href="#19">手動バックアップからの復元方法</a>
 </li></ul><h2 class="section"><small><a href="#top">△</a></small> <a name="1" id="1">はじめに</a></h2>
-<p>この説明書は、 WEB ブラウザを利用したネットワークゲーム「 SOLD OUT 」 CGI スクリプトの取り扱いに関する説明書です。</p>
-<p>SOLD OUT の設置/運営には<strong>ある程度の知識を前提</strong>としています。
+<p>この説明書は、 WEB ブラウザを利用したネットワークゲーム「 SOLD-MARKET 」 CGI スクリプトの取り扱いに関する説明書です。</p>
+<p>SOLD-MARKET の設置/運営には<strong>ある程度の知識を前提</strong>としています。
 CGI スクリプト等の設置/運営経験が無い方は、まずは別の易しいスクリプト等で経験を積まれることをお勧めします。</p>
 <p>なお、本説明書に表記の各種ディレクトリ名はデフォルトのモノを使用しています。
 ディレクトリ名を変更した場合は各自置き換えてください。</p>
 <h2 class="section"><small><a href="#top">△</a></small> <a name="2" id="2">謝辞</a></h2>
-<p>おかげさまで SOLD OUT の知名度も私の想像以上に上がり、大変嬉しく思っています。
+<p>おかげさまで SOLD-MARKET の知名度も私の想像以上に上がり、大変嬉しく思っています。
 設置してくださっているサイトさんの数も把握できない(申し訳ありません)くらいになっています。
 本当にありがとうございます。
-これからも SOLD OUT / MUTOYS をよろしくお願いします。</p>
+これからも SOLD-MARKET / MUTOYS をよろしくお願いします。</p>
 <h2 class="section"><small><a href="#top">△</a></small> <a name="3" id="3"><code class="filename">jcode.pl</code>について</a></h2>
 <p>本スクリプトで利用させていただいた <code class="filename">jcode.pl</code> は Kazumasa Utashiro さんの著作物です。
 同梱させていただきました。この場を借りて御礼申し上げます。</p>
-<h2 class="section"><small><a href="#top">△</a></small> <a name="4" id="4">SOLD OUT利用ライセンス</a></h2>
+<h2 class="section"><small><a href="#top">△</a></small> <a name="4" id="4">SOLD-MARKET利用ライセンス</a></h2>
 <p>配布スクリプト一式のライセンスは全て(<code class="filename">jcode.pl</code>は除く) GPL に準じるものとします。
 詳細は同梱の
 <a href="gpl.txt"><code class="filename">gpl.txt</code>(英語)</a>
@@ -94,7 +94,7 @@ CGI スクリプト等の設置/運営経験が無い方は、まずは別の易
 <p>基本的に行えません。
 疑問点等ありましたら、配布説明書や <a href="http://mutoys.com/">MUTOYS(ムートイズ) http://mutoys.com/</a> (公式 WEB サイト) をご覧下さい。</p>
 <h2 class="section"><small><a href="#top">△</a></small> <a name="6" id="6">設置環境条件</a></h2>
-<p>SOLD OUT は Perl5 で記述された CGI スクリプトです。
+<p>SOLD-MARKET は Perl5 で記述された CGI スクリプトです。
 Perl5 が動作するサーバへ設置してください。</p>
 <p>特殊なコマンドは使っていませんので多くの環境(サーバ)で動作すると思われます。
 動作確認は FreeBSD or Linux + Perl5 + Apache で行いました。</p>
@@ -110,7 +110,7 @@ Perl5 が動作するサーバへ設置してください。</p>
 一応、ゲームデータにはある程度互換性がありますので、腕に自身がある方は<strong>自己責任</strong>で挑戦してください。
 が、ゲームバランス等の問題もありますので、お勧めはできません。</p>
 <h2 class="section"><small><a href="#top">△</a></small> <a name="8" id="8">サーバ負荷</a></h2>
-<p>SOLD OUT は、出来る限りサーバへの負荷が少なくなるよう設計したつもりです。
+<p>SOLD-MARKET は、出来る限りサーバへの負荷が少なくなるよう設計したつもりです。
 しかし、(一概に比較は出来ませんが)重めの掲示板クラスの負荷があると認識しています。</p>
 <p>サーバへの負荷は「アクセス数 > 最大店舗数 > 商品種類数 > 更新間隔」で決まると思いますので、
 その辺りを念頭に置いて設置・カスタマイズをお願いします。特に共用サーバへ設置する方は気を付けてください。</p>
@@ -141,21 +141,21 @@ FTP ソフトにもよりますが、 soldout ディレクトリ を丸ごとそ
 パーミッションは下記の通りに変更してください。</p>
 <p>スクリプト等のテキストファイルはアスキーモードで、
 画像等のバイナリファイルはバイナリモードでアップロードしてください。</p>
-<pre><blockquote class="display">soldout   &lt;dir&gt; [755] SOLD OUT ルートディレクトリ
+<pre><blockquote class="display">soldout   &lt;dir> [755] SOLD-MARKET ルートディレクトリ
 ├ _*.cgi       [644] _で始まるcgiファイル全て
 ├ *.cgi        [755] _以外で始まるcgiファイル全て
 ├ index.html   [644] index.html
-├ auto   &lt;dir&gt; [755] 関数ディレクトリ
-├ custom &lt;dir&gt; [755] カスタマイズディレクトリ
-├ data   &lt;dir&gt; <font color="#FF0000">[777]</font> ゲームデータディレクトリ
-├ guild  &lt;dir&gt; [755] ギルドデータディレクトリ
-├ image  &lt;dir&gt; [755] 画像ディレクトリ
-├ inc    &lt;dir&gt; [755] カスタマイズ可能ファイルディレクトリ
-└ town   &lt;dir&gt; [755] 移転用街データディレクトリ
+├ auto   &lt;dir> [755] 関数ディレクトリ
+├ custom &lt;dir> [755] カスタマイズディレクトリ
+├ data   &lt;dir> <font color="#FF0000">[777]</font> ゲームデータディレクトリ
+├ guild  &lt;dir> [755] ギルドデータディレクトリ
+├ image  &lt;dir> [755] 画像ディレクトリ
+├ inc    &lt;dir> [755] カスタマイズ可能ファイルディレクトリ
+└ town   &lt;dir> [755] 移転用街データディレクトリ
 </blockquote></pre>
 <p>[???] はパーミッション設定です。
 各ディレクトリの中のファイルは全て [644] で設置して下さい。
-SOLD OUT ルートディレクトリのファイルのみ、指定通りにしてください。</p>
+SOLD-MARKET ルートディレクトリのファイルのみ、指定通りにしてください。</p>
 <p>また、<a href="#step2">手順２</a>で <code class="filename">soldout/admin.cgi</code> を書き換えた場合は、
 [755] に設定すべきファイルを全て [777] に設定してください。</p>
 <p class="display">note:注意：サーバによっては[755]を[705][700]、[644]を[604][600]という風に指定がある場合がありますので、
@@ -226,15 +226,6 @@ http://....../soldout/index.cgi?u=ユーザ名!パスワード
 パーミッションを[777]相当にしないと上手く復元できない可能性があります。</p>
 <p>あとは通常通りです。</p>
 <p><small><a href="#top">△</a></small></p>
-<hr /><p><a href="index.html">総合目次</a> &gt; 設置方法やライセンスについて</p>
-<hr /><div class="footer">
-<address>
-Copyright (C) 2001-2002 MUTOYS.<br />
-<a href="http://mutoys.com/">MUTOYS(ムートイズ) http://mutoys.com/</a><br />
-<a href="mailto:info@mutoys.com">info@mutoys.com</a><br />
-管理人：MU<br />
-画像作成：NAYUTA<br />
-</address>
-</div>
+<hr /><p><a href="index.html">総合目次</a> > 設置方法やライセンスについて</p>
 </body>
 </html>

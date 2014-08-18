@@ -1,20 +1,20 @@
-﻿<p><?xml version="1.0" encoding="Shift_JIS"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC
 "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rev="made" href="mailto:info@mutoys.com" />
 <link rel="index" href="index.html" />
 <link href="manual.css" type="text/css" rel="stylesheet" />
-<title>SOLD OUT MANUAL 2004-03-18</title>
+<title>SOLD-MARKET MANUAL 2014 Summer</title>
 </head>
 <body>
-<h1 class="title">SOLD OUT MANUAL 2004-03-18</h1>
-<p><a href="index.html">総合目次</a> &gt; <a href="customize.html">カスタマイズ目次</a> &gt; 各種関数表</p>
+<h1 class="title">SOLD-MARKET MANUAL 2014 Summer</h1>
+<p><a href="index.html">総合目次</a> > <a href="customize.html">カスタマイズ目次</a> > 各種関数表</p>
 <hr /></p>
-<p>SOLD OUT カスタマイズに利用できる関数の説明です。</p>
+<p>SOLD-MARKET カスタマイズに利用できる関数の説明です。</p>
 <ul><li>
 <a href="#1">表記について</a>
 <ul><li>
@@ -449,7 +449,7 @@ foreach my $line (@MESSAGE[$pagestart..$page_end])
 <dt>
 '追加パラメータ'</dt>
 <dd>
-ページコントロール用のアンカー<var>&lt;a href=&quot;....?....&amp;add&quot;&gt;...&lt;/a&gt;</var>の &add に相当する部分を指定します。
+ページコントロール用のアンカー<var>&lt;a href=&quot;....?....&amp;add&quot;>...&lt;/a></var>の &add に相当する部分を指定します。
 追加すべきパラメータが無ければ '' を指定します。
 </dd>
 <dt>
@@ -485,7 +485,7 @@ foreach my $line (@MESSAGE[$pagestart..$page_end])
     $disp.=$line.&quot;\n&quot;;
 }
 </pre><h3 class="subsection"><small><a href="#top">△</a></small> <a name="24" id="24">GetTagImgGuild</a></h3>
-構文 <code>GetTagImgGuild('ギルドコード'[,'noimage'[,'movetown']])</code><br />戻り値 <code>'ギルドマーク画像用HTMLもしくはギルド名'</code><br /><p>ギルドコードからギルドマーク画像の HTML(<var>&lt;img&gt;</var>)やギルド名を取得します。
+構文 <code>GetTagImgGuild('ギルドコード'[,'noimage'[,'movetown']])</code><br />戻り値 <code>'ギルドマーク画像用HTMLもしくはギルド名'</code><br /><p>ギルドコードからギルドマーク画像の HTML(<var>&lt;img></var>)やギルド名を取得します。
 引数により、取得できる文字列が変わります。</p>
 <p>存在しないギルドコードを指定した場合は「解散したギルド」というギルド名に置き換えられます。</p>
 <p>引数詳細</p>
@@ -512,10 +512,10 @@ movetown (省略可)</dt>
 my $guild_html=GetTagImgGuild('mutoysblue'); # mutoysblue というギルドコードのギルドのHTML
 my $guild_name=GetTagImgGuild('mutoysblue','noimage'); # mutoysblue というギルドコードのギルドの名称
 </pre><h3 class="subsection"><small><a href="#top">△</a></small> <a name="25" id="25">GetStockTime</a></h3>
-構文 <code>GetStockTime(持ち時間データ($DT-&gt;{time}相当))</code><br />戻り値 <code>持ち時間秒数</code><br /><p>持ち時間を表す時刻データ(最後に作業を完了した時刻)から、実際の持ち時間秒数を取得します。</p>
+構文 <code>GetStockTime(持ち時間データ($DT->{time}相当))</code><br />戻り値 <code>持ち時間秒数</code><br /><p>持ち時間を表す時刻データ(最後に作業を完了した時刻)から、実際の持ち時間秒数を取得します。</p>
 <p>持ち時間が設定(<code class="filename">soldout/_config.cgi</code>)された最大時間を超えていれば、最大時間に補正されます。</p>
 <pre class="display">
-my $stock_time=GetStockTime($DT-&gt;{time}); # 持ち時間取得
+my $stock_time=GetStockTime($DT->{time}); # 持ち時間取得
 my $stock_time_string=GetTime2HMS($stock_time);
 </pre><h3 class="subsection"><small><a href="#top">△</a></small> <a name="GetUserDataEx" id="GetUserDataEx">GetUserDataEx</a></h3>
 構文 <code>GetUserDataEx($DT,'キーワード')</code><br />戻り値 <code>キーワードに対応するユーザデータ</code><br /><p>$DT->{user}のデータを安全に取得します。</p>
@@ -528,20 +528,20 @@ my $stock_time_string=GetTime2HMS($stock_time);
 <p>なお、'_so_' から始まるキーワードはシステム予約としていますので、使用しないでください。</p>
 <pre class="display">
 my $in_time=GetUserDataEx($DT,'town_in');
-# $in_time に $DT-&gt;{user}{town_in} を取得する。
+# $in_time に $DT->{user}{town_in} を取得する。
 </pre><h3 class="subsection"><small><a href="#top">△</a></small> <a name="SetUserDataEx" id="SetUserDataEx">SetUserDataEx</a></h3>
 構文 <code>SetUserDataEx($DT,'キーワード','データ')</code><br />戻り値 <code>セットされたエスケープ済みデータ(確認用)</code><br /><p>$DT->{user}のデータを安全に記録します。キーワードとデータを指定してください。</p>
 <p>記録されたデータは <a href="#GetUserDataEx">GetUserDataEx</a> で取得できます。</p>
 <p>なお、'_so_' から始まるキーワードはシステム予約としていますので、使用しないでください。</p>
 <pre class="display">
 SetUserDataEx($DT,'town_in',time());
-# 現時刻を $DT-&gt;{user}{town_in} に記録する。
+# 現時刻を $DT->{user}{town_in} に記録する。
 </pre><h3 class="subsection"><small><a href="#top">△</a></small> <a name="28" id="28">EditMoney</a></h3>
 構文 <code>EditMoney($DT,増減額)</code><br />戻り値 <code>なし</code><br /><p>$DT の資金(money)を増減します。</p>
 <p>最大金額を超えたり\0 未満になった場合は補正されます。</p>
 <pre class="display">
 EditMoney($DT,-1234);
-# $DT-&gt;{money}から\1234引きます。
+# $DT->{money}から\1234引きます。
 </pre><h3 class="subsection"><small><a href="#top">△</a></small> <a name="29" id="29">EditTime</a></h3>
 構文 <code>EditTime($DT,増減持ち時間)</code><br />戻り値 <code>なし</code><br /><p>$DT の持ち時間を増減します。</p>
 <pre class="display">
@@ -551,9 +551,9 @@ EditTime($DT,12*60*60);
 構文 <code>GetID2UserName(ユーザID)</code><br />戻り値 <code>('店舗名','ユーザ名')</code><br /><p>ユーザ ID($DT->{id})から店舗名とユーザ名を取得します。</p>
 <p>存在しないユーザ ID の場合は('閉店済','')を返します。</p>
 <pre class="display">
-my($shopname,$username)=GetID2UserName($DT-&gt;{id});
+my($shopname,$username)=GetID2UserName($DT->{id});
 </pre><h3 class="subsection"><small><a href="#top">△</a></small> <a name="31" id="31">GetMenuTag</a></h3>
-構文 <code>GetMenuTag('ファイル名(ベース部分)','表示文字列'[,'付加するパラメータ'])</code><br />戻り値 <code>'アンカー&lt;a&gt;...&lt;/a&gt;文字列'</code><br /><p>メニューとなるアンカー <var>&lt;a href=&quot;....&quot;&gt;....&lt;/a&gt;</var> を取得します。
+構文 <code>GetMenuTag('ファイル名(ベース部分)','表示文字列'[,'付加するパラメータ'])</code><br />戻り値 <code>'アンカー&lt;a>...&lt;/a>文字列'</code><br /><p>メニューとなるアンカー <var>&lt;a href=&quot;....&quot;>....&lt;/a></var> を取得します。
 すでにログインされている場合は、ログイン情報(ユーザ名やセッション情報など)も付加します。</p>
 <p>引数詳細</p>
 <dl><dt>
@@ -564,7 +564,7 @@ my($shopname,$username)=GetID2UserName($DT-&gt;{id});
 <dt>
 表示文字列</dt>
 <dd>
-<var>&lt;a&gt;????&lt;/a&gt;</var>の????の部分の文字列を指定します。
+<var>&lt;a>????&lt;/a></var>の????の部分の文字列を指定します。
 </dd>
 <dt>
 付加するパラメータ (省略可)</dt>
@@ -631,11 +631,11 @@ $string=CutStr($string,40);
 # 半角40文字(全角20文字)以内に切り詰めます。
 </pre><h3 class="subsection"><small><a href="#top">△</a></small> <a name="37" id="37">EscapeHTML</a></h3>
 構文 <code>EscapeHTML('HTML文字列')</code><br />戻り値 <code>'エスケープされた文字列'</code><br /><p>HTML で特別な意味を持つ文字
-&amp; &lt; &gt; &quot; を
+&amp; &lt; > &quot; を
 <var> &amp;amp; &amp;lt; &amp;gt; &amp;quot; </var> にエスケープします。</p>
 <p>ユーザ入力された文字列を表示する場合は、危険なタグを無効にするためにこの関数を通してから表示するといいでしょう。</p>
 <pre class="display">
-my $escape=EscapeHTML('&lt;img src=&quot;analyze.cgi?&quot;&gt;');
+my $escape=EscapeHTML('&lt;img src=&quot;analyze.cgi?&quot;>');
 # $escape は '&amp;lt;img src=&amp;quot;analyze.cgi&amp;quot;&amp;gt;' になります。
 </pre><h3 class="subsection"><small><a href="#top">△</a></small> <a name="38" id="38">GetFileTime</a></h3>
 構文 <code>GetFileTime('ファイル名(ベース部分)')</code><br />戻り値 <code>時刻秒数(GMT)</code><br /><p><code class="filename">soldout/data</code>に存在するファイルの最終更新時刻を取得します。</p>
@@ -646,7 +646,7 @@ my $file_time_string_2=GetTime2FormatTime($file_time,'full');
 </pre><h3 class="subsection"><small><a href="#top">△</a></small> <a name="39" id="39">GetTime2HMS</a></h3>
 構文 <code>GetTime2HMS(時間秒数)</code><br />戻り値 <code>'時間を表す文字列'</code><br /><p>秒数から「?日」「?時間」「?時間?分」「?分」「?秒」といった形式を取得します。</p>
 <pre class="display">
-my $stock_time=GetStockTime($DT-&gt;{time});
+my $stock_time=GetStockTime($DT->{time});
 my $stock_time_string=GetTime2HMS($stock_time); # 持ち時間秒数を読みやすい形式で取得
 </pre><h3 class="subsection"><small><a href="#top">△</a></small> <a name="40" id="40">GetTime2FormatTime</a></h3>
 構文 <code>GetTime2FormatTime(時刻秒数(GMT)[,'full'])</code><br />戻り値 <code>'時刻を表す文字列'</code><br /><p>時刻秒数から「 01/23 04:56 」「 01/23 」「 04:56 」といった形式を取得します。</p>
@@ -658,11 +658,11 @@ my $file_time=GetFileTime('test');
 my $file_time_string_1=GetTime2FormatTime($file_time); # data/test.cgi の最終更新時刻を読める形式で取得 (??/?? or ??:??)
 my $file_time_string_2=GetTime2FormatTime($file_time,'full');# data/test.cgi の最終更新時刻を読める形式で取得 (??/?? ??:??)
 </pre><h3 class="subsection"><small><a href="#top">△</a></small> <a name="41" id="41">GetTagA</a></h3>
-構文 <code>GetTagA('表示文字列','リンク先URL'[,'リンク無し'[,'target属性']])</code><br />戻り値 <code>'アンカータグ文字列'</code><br /><p>リンク用タグ(アンカータグ<var>&lt;a&gt;</var>)を取得します。</p>
+構文 <code>GetTagA('表示文字列','リンク先URL'[,'リンク無し'[,'target属性']])</code><br />戻り値 <code>'アンカータグ文字列'</code><br /><p>リンク用タグ(アンカータグ<var>&lt;a></var>)を取得します。</p>
 <dl><dt>
 表示文字列</dt>
 <dd>
-<var>&lt;a&gt;????&lt;/a&gt;</var>の????の部分の文字列を指定します。
+<var>&lt;a>????&lt;/a></var>の????の部分の文字列を指定します。
 </dd>
 <dt>
 リンク先URL</dt>
@@ -679,7 +679,7 @@ my $file_time_string_2=GetTime2FormatTime($file_time,'full');# data/test.cgi の
 <dt>
 target属性 (省略可)</dt>
 <dd>
-<var>&lt;a target=&quot;????&quot;&gt;</var> の ???? の部分を指定します。
+<var>&lt;a target=&quot;????&quot;></var> の ???? の部分を指定します。
 </dd></dl><pre class="display">
 my $link_1=GetTagA('テストリンク','test.html'); # test.html へのリンクHTML
 my $link_2=GetTagA('テストリンク','test.html','nolonk'); # テストリンク という文字列(非HTML)
@@ -713,25 +713,25 @@ WriteLog(2,0,'情報メッセージ');
 WriteLog(0,123,'店舗ID123用(秘)メッセージ');
 </pre><p>item::WriteLog 利用可能範囲</p>
 <ul><li>
-<a href="customize2.html#%40%40ITEM">商品データ記述文法 &gt; @@ITEM</a>
+<a href="customize2.html#%40%40ITEM">商品データ記述文法 > @@ITEM</a>
 </li>
 <li>
-<a href="customize2.html#%40%40USE">商品データ記述文法 &gt; @@USE</a>
+<a href="customize2.html#%40%40USE">商品データ記述文法 > @@USE</a>
 </li>
 <li>
-<a href="customize2.html#%40%40FUNCITEM">商品データ記述文法 &gt; @@FUNCITEM</a>
+<a href="customize2.html#%40%40FUNCITEM">商品データ記述文法 > @@FUNCITEM</a>
 </li>
 <li>
-<a href="customize2.html#%40%40FUNCUPDATE">商品データ記述文法 &gt; @@FUNCUPDATE</a>
+<a href="customize2.html#%40%40FUNCUPDATE">商品データ記述文法 > @@FUNCUPDATE</a>
 </li>
 <li>
-<a href="customize2.html#%40%40FUNCTURN">商品データ記述文法 &gt; @@FUNCTURN</a>
+<a href="customize2.html#%40%40FUNCTURN">商品データ記述文法 > @@FUNCTURN</a>
 </li></ul><p>event::WriteLog 利用可能範囲</p>
 <ul><li>
-<a href="customize2.html#%40%40EVENT">商品データ記述文法 &gt; @@EVENT</a>
+<a href="customize2.html#%40%40EVENT">商品データ記述文法 > @@EVENT</a>
 </li>
 <li>
-<a href="customize2.html#%40%40FUNCEVENT">商品データ記述文法 &gt; @@FUNCEVENT</a>
+<a href="customize2.html#%40%40FUNCEVENT">商品データ記述文法 > @@FUNCEVENT</a>
 </li></ul><h3 class="subsection"><small><a href="#top">△</a></small> <a name="item%3a%3aDebugLog%20event%3a%3aDebugLog" id="item%3a%3aDebugLog%20event%3a%3aDebugLog">item::DebugLog event::DebugLog</a></h3>
 構文 <code>item::DebugLog('メッセージ')</code><br />構文 <code>event::DebugLog('メッセージ')</code><br />戻り値 <code>なし</code><br /><p><code class="filename">soldout/_config.cgi</code>の設定により、開発時のデバッグ用ログ出力を行います。
 出力されたログは管理メニューから参照できます。</p>
@@ -739,25 +739,25 @@ WriteLog(0,123,'店舗ID123用(秘)メッセージ');
 DebugLog('デバッグログ');
 </pre><p>item::DebugLog 利用可能範囲</p>
 <ul><li>
-<a href="customize2.html#%40%40ITEM">商品データ記述文法 &gt; @@ITEM</a>
+<a href="customize2.html#%40%40ITEM">商品データ記述文法 > @@ITEM</a>
 </li>
 <li>
-<a href="customize2.html#%40%40USE">商品データ記述文法 &gt; @@USE</a>
+<a href="customize2.html#%40%40USE">商品データ記述文法 > @@USE</a>
 </li>
 <li>
-<a href="customize2.html#%40%40FUNCITEM">商品データ記述文法 &gt; @@FUNCITEM</a>
+<a href="customize2.html#%40%40FUNCITEM">商品データ記述文法 > @@FUNCITEM</a>
 </li>
 <li>
-<a href="customize2.html#%40%40FUNCUPDATE">商品データ記述文法 &gt; @@FUNCUPDATE</a>
+<a href="customize2.html#%40%40FUNCUPDATE">商品データ記述文法 > @@FUNCUPDATE</a>
 </li>
 <li>
-<a href="customize2.html#%40%40FUNCTURN">商品データ記述文法 &gt; @@FUNCTURN</a>
+<a href="customize2.html#%40%40FUNCTURN">商品データ記述文法 > @@FUNCTURN</a>
 </li></ul><p>event::DebugLog 利用可能範囲</p>
 <ul><li>
-<a href="customize2.html#%40%40EVENT">商品データ記述文法 &gt; @@EVENT</a>
+<a href="customize2.html#%40%40EVENT">商品データ記述文法 > @@EVENT</a>
 </li>
 <li>
-<a href="customize2.html#%40%40FUNCEVENT">商品データ記述文法 &gt; @@FUNCEVENT</a>
+<a href="customize2.html#%40%40FUNCEVENT">商品データ記述文法 > @@FUNCEVENT</a>
 </li></ul><h3 class="subsection"><small><a href="#top">△</a></small> <a name="item%3a%3aUseItem" id="item%3a%3aUseItem">item::UseItem</a></h3>
 構文 <code>item::UseItem(商品番号,消費数[,'メッセージ'])</code><br />戻り値 <code>なし</code><br /><p>パッケージ変数 $item::DT の店舗に対して商品番号の商品を消費させます。
 残りが 0 以下になった場合は 0 に補正されます。</p>
@@ -767,7 +767,7 @@ UseItem(12,34);
 UseItem(12,34,'No.12を消費しました');
 </pre><p>利用可能範囲</p>
 <ul><li>
-<a href="customize2.html#%40%40USE">商品データ記述文法 &gt; @@USE</a>
+<a href="customize2.html#%40%40USE">商品データ記述文法 > @@USE</a>
 </li></ul><h3 class="subsection"><small><a href="#top">△</a></small> <a name="item%3a%3aUseItemSub" id="item%3a%3aUseItemSub">item::UseItemSub</a></h3>
 構文 <code>item::UseItemSub(商品番号,消費数,対象店舗データ($DT))</code><br />戻り値 <code>実際の消費数</code><br /><p><a href="#item%3a%3aUseItem">item::UseItem</a>の下請け関数ですが、汎用的に利用できます。</p>
 <p>対象店舗データの商品在庫から商品番号の商品を消費させます。
@@ -776,19 +776,19 @@ UseItem(12,34,'No.12を消費しました');
 UseItemSub(12,34,$DT);
 </pre><p>利用可能範囲</p>
 <ul><li>
-<a href="customize2.html#%40%40ITEM">商品データ記述文法 &gt; @@ITEM</a>
+<a href="customize2.html#%40%40ITEM">商品データ記述文法 > @@ITEM</a>
 </li>
 <li>
-<a href="customize2.html#%40%40USE">商品データ記述文法 &gt; @@USE</a>
+<a href="customize2.html#%40%40USE">商品データ記述文法 > @@USE</a>
 </li>
 <li>
-<a href="customize2.html#%40%40FUNCITEM">商品データ記述文法 &gt; @@FUNCITEM</a>
+<a href="customize2.html#%40%40FUNCITEM">商品データ記述文法 > @@FUNCITEM</a>
 </li>
 <li>
-<a href="customize2.html#%40%40FUNCUPDATE">商品データ記述文法 &gt; @@FUNCUPDATE</a>
+<a href="customize2.html#%40%40FUNCUPDATE">商品データ記述文法 > @@FUNCUPDATE</a>
 </li>
 <li>
-<a href="customize2.html#%40%40FUNCTURN">商品データ記述文法 &gt; @@FUNCTURN</a>
+<a href="customize2.html#%40%40FUNCTURN">商品データ記述文法 > @@FUNCTURN</a>
 </li></ul><h3 class="subsection"><small><a href="#top">△</a></small> <a name="item%3a%3aAddItem" id="item%3a%3aAddItem">item::AddItem</a></h3>
 構文 <code>item::AddItem(商品番号,取得数[,'メッセージ'])</code><br />戻り値 <code>なし</code><br /><p>パッケージ変数 $item::DT の店舗に対して商品番号の商品を取得させます。
 所持最大数を超えた場合は最大数に補正されます。</p>
@@ -798,7 +798,7 @@ AddItem(12,34);
 AddItem(12,34,'No.12を取得しました');
 </pre><p>利用可能範囲</p>
 <ul><li>
-<a href="customize2.html#%40%40USE">商品データ記述文法 &gt; @@USE</a>
+<a href="customize2.html#%40%40USE">商品データ記述文法 > @@USE</a>
 </li></ul><h3 class="subsection"><small><a href="#top">△</a></small> <a name="item%3a%3aAddItemSub" id="item%3a%3aAddItemSub">item::AddItemSub</a></h3>
 構文 <code>item::AddItemSub(商品番号,取得数,対象店舗データ($DT))</code><br />戻り値 <code>実際の取得数</code><br /><p><a href="#item%3a%3aAddItem">item::AddItem</a>の下請け関数ですが、汎用的に利用できます。</p>
 <p>対象店舗データの商品在庫から商品番号の商品を取得させます。
@@ -807,29 +807,20 @@ AddItem(12,34,'No.12を取得しました');
 AddItemSub(12,34,$DT);
 </pre><p>利用可能範囲</p>
 <ul><li>
-<a href="customize2.html#%40%40ITEM">商品データ記述文法 &gt; @@ITEM</a>
+<a href="customize2.html#%40%40ITEM">商品データ記述文法 > @@ITEM</a>
 </li>
 <li>
-<a href="customize2.html#%40%40USE">商品データ記述文法 &gt; @@USE</a>
+<a href="customize2.html#%40%40USE">商品データ記述文法 > @@USE</a>
 </li>
 <li>
-<a href="customize2.html#%40%40FUNCITEM">商品データ記述文法 &gt; @@FUNCITEM</a>
+<a href="customize2.html#%40%40FUNCITEM">商品データ記述文法 > @@FUNCITEM</a>
 </li>
 <li>
-<a href="customize2.html#%40%40FUNCUPDATE">商品データ記述文法 &gt; @@FUNCUPDATE</a>
+<a href="customize2.html#%40%40FUNCUPDATE">商品データ記述文法 > @@FUNCUPDATE</a>
 </li>
 <li>
-<a href="customize2.html#%40%40FUNCTURN">商品データ記述文法 &gt; @@FUNCTURN</a>
+<a href="customize2.html#%40%40FUNCTURN">商品データ記述文法 > @@FUNCTURN</a>
 </li></ul><p><small><a href="#top">△</a></small></p>
-<hr /><p><a href="index.html">総合目次</a> &gt; <a href="customize.html">カスタマイズ目次</a> &gt; 各種関数表</p>
-<hr /><div class="footer">
-<address>
-Copyright (C) 2001-2002 MUTOYS.<br />
-<a href="http://mutoys.com/">MUTOYS(ムートイズ) http://mutoys.com/</a><br />
-<a href="mailto:info@mutoys.com">info@mutoys.com</a><br />
-管理人：MU<br />
-画像作成：NAYUTA<br />
-</address>
-</div>
+<hr /><p><a href="index.html">総合目次</a> > <a href="customize.html">カスタマイズ目次</a> > 各種関数表</p>
 </body>
 </html>

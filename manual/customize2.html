@@ -1,20 +1,20 @@
-﻿<p><?xml version="1.0" encoding="Shift_JIS"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC
 "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rev="made" href="mailto:info@mutoys.com" />
 <link rel="index" href="index.html" />
 <link href="manual.css" type="text/css" rel="stylesheet" />
-<title>SOLD OUT MANUAL 2004-03-18</title>
+<title>SOLD-MARKET MANUAL 2014 Summer</title>
 </head>
 <body>
-<h1 class="title">SOLD OUT MANUAL 2004-03-18</h1>
-<p><a href="index.html">総合目次</a> &gt; <a href="customize.html">カスタマイズ目次</a> &gt; 商品データ記述文法</p>
+<h1 class="title">SOLD-MARKET MANUAL 2014 Summer</h1>
+<p><a href="index.html">総合目次</a> > <a href="customize.html">カスタマイズ目次</a> > 商品データ記述文法</p>
 <hr /></p>
-<p>SOLD OUT カスタマイズの文法とコマンドの説明です。</p>
+<p>SOLD-MARKET カスタマイズの文法とコマンドの説明です。</p>
 <ul><li>
 <a href="#1">はじめに</a>
 </li>
@@ -737,7 +737,7 @@ nobuy</dt>
     my($ITEM,@DT)=@_;
     foreach my $DT (@DT)
     {
-        $DT-&gt;{money} += $TIMESPAN;
+        $DT->{money} += $TIMESPAN;
     }
     return;
 _local_
@@ -760,8 +760,8 @@ _local_
 <pre class="display">
 @@ITEM funcs _local_
     my($ITEM,$DT,$count,$price)=@_;
-    $DT-&gt;{moneystock}-=($price/2);
-    $DT-&gt;{money}+=($price/2);
+    $DT->{moneystock}-=($price/2);
+    $DT->{money}+=($price/2);
     return 0;
 _local_
 # この商品が売れると、売り上げの1/2が自動的に入金庫から資金へ移動します。
@@ -837,7 +837,7 @@ $DTS->{_wholestore_} が存在するかどうかで行ってください。</p>
 <pre class="display">
 @@ITEM funcb _local_
     my($BUY)=@_;
-    AddItemSub(@@ITEMNO&quot;福引券&quot;,int($BUY-&gt;{num}*$BUY-&gt;{price}/10000),$BUY-&gt;{dt}) if $BUY-&gt;{num}*$BUY-&gt;{price}&gt;=10000;
+    AddItemSub(@@ITEMNO&quot;福引券&quot;,int($BUY->{num}*$BUY->{price}/10000),$BUY->{dt}) if $BUY->{num}*$BUY->{price}>=10000;
     return 0;
 _local_
 # この商品を買うと、\10,000に付き1枚の福引券(商品)が手に入る。
@@ -891,7 +891,7 @@ message40 という風に数値を付け加えると、
 入力文字数(半角)を制限できます。
 デフォルトは 80 文字です。
 コメントは、 SJIS に変換後、指定文字数に切り詰められ、
-&amp;&lt;&gt;&quot; はエスケープされます。
+&amp;&lt;>&quot; はエスケープされます。
 入力されたコメントは、 func 内で $USE->{arg}->{message} として利用できます。
 併せて<a href="#52">argmessage</a>も参照してください。</p>
 <p>[パラメータタイプ] に select と記述することで、
@@ -979,7 +979,7 @@ radio タイプの選択肢にすることができます。
 package item です。</p>
 <pre class="display">
 @@USE func _local_
-    $DT-&gt;{money} += 1000;
+    $DT->{money} += 1000;
 _local_
 # 使用すると\1000増える処理
 </pre><h3 class="subsection"><small><a href="#top">△</a></small> <a name="62" id="62">func _local_?</a></h3>
@@ -1002,7 +1002,7 @@ _local_
 <p>package item です。</p>
 <pre class="display">
 @@USE funci _local_
-    return '&lt;p&gt;&lt;strong&gt;この商品を使うと凄いことが起こるかもしれません&lt;/strong&gt;&lt;/p&gt;';
+    return '&lt;p>&lt;strong>この商品を使うと凄いことが起こるかもしれません&lt;/strong>&lt;/p>';
 _local_
 </pre><h3 class="subsection"><small><a href="#top">△</a></small> <a name="64" id="64">funci _local_i?</a></h3>
 構文 <code>funci _local_[定義番号:数値(1～)]</code><br /><p><strong>(書式 2) 説明文出力関数呼び出し</strong></p>
@@ -1019,10 +1019,10 @@ _local_
 その場合は $USE->{param2} $USE->{param3} $USE->{param4} で参照できます。</p>
 <pre class="display">
 @@USE param 1,100,test,param
-# $USE-&gt;{param1}='1';
-# $USE-&gt;{param2}='100';
-# $USE-&gt;{param3}='test';
-# $USE-&gt;{param4}='param';
+# $USE->{param1}='1';
+# $USE->{param2}='100';
+# $USE->{param3}='test';
+# $USE->{param4}='param';
 </pre><h3 class="subsection"><small><a href="#top">△</a></small> <a name="66" id="66">funcb _local_</a></h3>
 <p><strong>使用前独自関数呼び出し</strong></p>
 <p>商品の使用可否を検査する直前と、使用する「直前」に呼び出される処理を記述します。
@@ -1045,13 +1045,13 @@ package item です。</p>
 @@USE funcb _local_
     my($USE)=@_;
     
-    if($DT-&gt;{money}&lt;10000)
+    if($DT->{money}&lt;10000)
     {
         return 1;
     }
-    elsif($DT-&gt;{money}&gt;=100000)
+    elsif($DT->{money}>=100000)
     {
-        $USE-&gt;{name}.='[所持金が多すぎます]';
+        $USE->{name}.='[所持金が多すぎます]';
         return 2;
     }
     return 0;
@@ -1142,9 +1142,9 @@ package event です。</p>
     
     foreach my $DT (@DT)
     {
-        next if !$DT-&gt;{item}[$itemno-1];
-        next if rand(1000)&gt;$rate;
-        $DT-&gt;{money}+=100000;
+        next if !$DT->{item}[$itemno-1];
+        next if rand(1000)>$rate;
+        $DT->{money}+=100000;
     }
     return 0,'配当がありました';
 _local_
@@ -1170,9 +1170,9 @@ _local_
     my($itemno)=@_;
     foreach my $DT (@DT)
     {
-        $DT-&gt;{item}[$itemno-1]=0 if $DT-&gt;{item}[$itemno-1];
+        $DT->{item}[$itemno-1]=0 if $DT->{item}[$itemno-1];
     }
-    return 1,'全店舗の'.$ITEM[$itemno-1]-&gt;{name}.'が回収されました';
+    return 1,'全店舗の'.$ITEM[$itemno-1]->{name}.'が回収されました';
 _local_
 # 全店舗の商品番号11の所持数を0にし、イベント終了
 </pre><h3 class="subsection"><small><a href="#top">△</a></small> <a name="81" id="81">func</a></h3>
@@ -1198,8 +1198,8 @@ $TIMESPAN 変数から得られる「前回更新時刻からの経過秒数」�
     if(rand(86400)&lt;$TIMESPAN*$count)
     {
         my $idx=int rand(scalar @DT);
-        $DT[$idx]-&gt;{money}=int $DT[$idx]-&gt;{money}/2;
-        $ret=$DT[$idx]-&gt;{name}.'の所持金が半分になりました';
+        $DT[$idx]->{money}=int $DT[$idx]->{money}/2;
+        $ret=$DT[$idx]->{name}.'の所持金が半分になりました';
     }
     return $ret;
 _local_
@@ -1405,7 +1405,7 @@ sub CustomPage_another
 <p>店舗の初期化が終わり、データを書き込む直前に実行されます。</p>
 <p>なお、この@@FUNCNEW の記述中に <code>$DEFINE_FUNCNEW_NOLOG=1;</code> がある場合は、
 「？？？？が新装開店しました」というログ出力が実行されません。
-<a href="customize4.html#WriteLog">各種関数表 &gt; WriteLog</a> を使って独自に出力したい場合などに利用してください。</p>
+<a href="customize4.html#WriteLog">各種関数表 > WriteLog</a> を使って独自に出力したい場合などに利用してください。</p>
 <p>構文等は <a href="#%40%40FUNCITEM">@@FUNCITEM</a> と同じですので、そちらを参照してください。</p>
 <h3 class="subsection"><small><a href="#top">△</a></small> <a name="122" id="122">package main</a></h3>
 <p>package main となります。</p>
@@ -1551,15 +1551,6 @@ ne 文字列比較し、違う場合
 <p><code class="filename">soldout/inc/inc-item-data.cgi</code>の記述終了を示すコマンドです。
 このコマンド以降は無視され、コンバートを終了します。</p>
 <p><small><a href="#top">△</a></small></p>
-<hr /><p><a href="index.html">総合目次</a> &gt; <a href="customize.html">カスタマイズ目次</a> &gt; 商品データ記述文法</p>
-<hr /><div class="footer">
-<address>
-Copyright (C) 2001-2002 MUTOYS.<br />
-<a href="http://mutoys.com/">MUTOYS(ムートイズ) http://mutoys.com/</a><br />
-<a href="mailto:info@mutoys.com">info@mutoys.com</a><br />
-管理人：MU<br />
-画像作成：NAYUTA<br />
-</address>
-</div>
+<hr /><p><a href="index.html">総合目次</a> > <a href="customize.html">カスタマイズ目次</a> > 商品データ記述文法</p>
 </body>
 </html>
